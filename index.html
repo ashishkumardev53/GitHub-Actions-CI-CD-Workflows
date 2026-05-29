@@ -1,1 +1,288 @@
-<h1> Hello dosto </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DevOps Engineer Portfolio</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+      line-height:1.6;
+    }
+
+    header{
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      background:linear-gradient(to right,#0f172a,#1e293b);
+      padding:20px;
+    }
+
+    header h1{
+      font-size:60px;
+      color:#38bdf8;
+    }
+
+    header h2{
+      font-size:28px;
+      margin-top:10px;
+      color:#cbd5e1;
+    }
+
+    header p{
+      max-width:700px;
+      margin-top:20px;
+      color:#94a3b8;
+      font-size:18px;
+    }
+
+    .btn{
+      margin-top:30px;
+      display:inline-block;
+      padding:14px 30px;
+      background:#38bdf8;
+      color:black;
+      text-decoration:none;
+      border-radius:8px;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:white;
+      transform:scale(1.05);
+    }
+
+    section{
+      padding:80px 10%;
+    }
+
+    .section-title{
+      font-size:40px;
+      margin-bottom:40px;
+      color:#38bdf8;
+      text-align:center;
+    }
+
+    .about{
+      text-align:center;
+      color:#cbd5e1;
+      font-size:18px;
+    }
+
+    .skills{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+    }
+
+    .skill-card{
+      background:#1e293b;
+      padding:25px;
+      border-radius:12px;
+      text-align:center;
+      transition:0.3s;
+      border:1px solid #334155;
+    }
+
+    .skill-card:hover{
+      transform:translateY(-10px);
+      border-color:#38bdf8;
+    }
+
+    .skill-card h3{
+      color:#38bdf8;
+      margin-bottom:10px;
+    }
+
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:25px;
+    }
+
+    .project-card{
+      background:#1e293b;
+      padding:25px;
+      border-radius:12px;
+      border:1px solid #334155;
+      transition:0.3s;
+    }
+
+    .project-card:hover{
+      transform:scale(1.03);
+      border-color:#38bdf8;
+    }
+
+    .project-card h3{
+      color:#38bdf8;
+      margin-bottom:15px;
+    }
+
+    .contact{
+      text-align:center;
+    }
+
+    .contact p{
+      margin:10px 0;
+      color:#cbd5e1;
+      font-size:18px;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#020617;
+      color:#94a3b8;
+    }
+
+    @media(max-width:768px){
+      header h1{
+        font-size:42px;
+      }
+
+      header h2{
+        font-size:22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO SECTION -->
+
+  <header>
+    <h1>Ashish </h1>
+    <h2>DevOps Engineer</h2>
+
+    <p>
+      Passionate DevOps Engineer focused on Cloud, Linux, Docker,
+      Kubernetes, CI/CD Pipelines, and Automation.
+      I build scalable and reliable infrastructure solutions.
+    </p>
+
+    <a href="#contact" class="btn">Hire Me</a>
+  </header>
+
+  <!-- ABOUT -->
+
+  <section>
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about">
+      <p>
+        I am a DevOps Engineer with experience in Linux Administration,
+        AWS Cloud, Docker Containers, Kubernetes, Jenkins,
+        GitHub Actions, Terraform, and Monitoring tools.
+        I love automating workflows and building scalable systems.
+      </p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+
+  <section>
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills">
+
+      <div class="skill-card">
+        <h3>Linux</h3>
+        <p>Ubuntu, CentOS, Shell Scripting</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Cloud</h3>
+        <p>AWS, EC2, S3, IAM, VPC</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Containers</h3>
+        <p>Docker, Kubernetes</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>CI/CD</h3>
+        <p>Jenkins, GitHub Actions</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Infrastructure</h3>
+        <p>Terraform, Ansible</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Monitoring</h3>
+        <p>Prometheus, Grafana</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+
+  <section>
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects">
+
+      <div class="project-card">
+        <h3>CI/CD Pipeline</h3>
+        <p>
+          Automated deployment pipeline using Jenkins,
+          Docker, and GitHub Webhooks.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h3>Kubernetes Deployment</h3>
+        <p>
+          Deployed scalable microservices architecture
+          on Kubernetes cluster.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h3>AWS Infrastructure</h3>
+        <p>
+          Created secure cloud infrastructure using Terraform
+          and AWS services.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+
+    <div class="contact">
+      <p>Email: ashish@example.com</p>
+      <p>GitHub: github.com/ashish</p>
+      <p>LinkedIn: linkedin.com/in/ashish</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <p>© 2026 Ashish Sharma | DevOps Engineer</p>
+  </footer>
+
+</body>
+</html>
