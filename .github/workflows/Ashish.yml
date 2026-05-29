@@ -3,7 +3,8 @@ name: Ashish
 
 # runs on a trigger
 on:
-   workflow_dispatch: 
+   push:
+     branches: [main]
 
 # these are jobs inside the workflow
 jobs:
