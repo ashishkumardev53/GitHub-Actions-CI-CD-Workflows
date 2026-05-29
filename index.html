@@ -3,285 +3,584 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DevOps Engineer Portfolio</title>
+  <title>Ashish | DevOps Engineer</title>
+
+  <!-- GOOGLE FONT -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
+
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family:Arial, sans-serif;
+      font-family:'Poppins',sans-serif;
+      scroll-behavior:smooth;
     }
 
     body{
-      background:#0f172a;
+      background:#060816;
       color:white;
-      line-height:1.6;
+      overflow-x:hidden;
     }
 
-    header{
-      height:100vh;
+    /* BACKGROUND GLOW */
+
+    body::before{
+      content:"";
+      position:fixed;
+      width:500px;
+      height:500px;
+      background:#00f0ff30;
+      filter:blur(140px);
+      top:-100px;
+      left:-100px;
+      z-index:-1;
+    }
+
+    body::after{
+      content:"";
+      position:fixed;
+      width:500px;
+      height:500px;
+      background:#8b5cf630;
+      filter:blur(140px);
+      bottom:-100px;
+      right:-100px;
+      z-index:-1;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      width:100%;
+      position:fixed;
+      top:0;
+      left:0;
+      padding:20px 10%;
       display:flex;
-      flex-direction:column;
-      justify-content:center;
+      justify-content:space-between;
       align-items:center;
-      text-align:center;
-      background:linear-gradient(to right,#0f172a,#1e293b);
-      padding:20px;
+      backdrop-filter:blur(15px);
+      background:rgba(255,255,255,0.05);
+      border-bottom:1px solid rgba(255,255,255,0.1);
+      z-index:1000;
     }
 
-    header h1{
-      font-size:60px;
-      color:#38bdf8;
-    }
-
-    header h2{
+    .logo{
       font-size:28px;
-      margin-top:10px;
-      color:#cbd5e1;
+      font-weight:700;
+      background:linear-gradient(to right,#00f0ff,#8b5cf6);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
     }
 
-    header p{
-      max-width:700px;
-      margin-top:20px;
-      color:#94a3b8;
-      font-size:18px;
+    nav ul{
+      display:flex;
+      gap:30px;
+      list-style:none;
     }
 
-    .btn{
-      margin-top:30px;
-      display:inline-block;
-      padding:14px 30px;
-      background:#38bdf8;
-      color:black;
+    nav ul li a{
+      color:white;
       text-decoration:none;
-      border-radius:8px;
-      font-weight:bold;
+      font-size:15px;
       transition:0.3s;
+      position:relative;
     }
 
-    .btn:hover{
-      background:white;
-      transform:scale(1.05);
+    nav ul li a:hover{
+      color:#00f0ff;
     }
 
-    section{
-      padding:80px 10%;
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:120px 10%;
+      position:relative;
     }
 
-    .section-title{
-      font-size:40px;
-      margin-bottom:40px;
-      color:#38bdf8;
-      text-align:center;
-    }
-
-    .about{
-      text-align:center;
-      color:#cbd5e1;
-      font-size:18px;
-    }
-
-    .skills{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:20px;
-    }
-
-    .skill-card{
-      background:#1e293b;
-      padding:25px;
-      border-radius:12px;
-      text-align:center;
-      transition:0.3s;
-      border:1px solid #334155;
-    }
-
-    .skill-card:hover{
-      transform:translateY(-10px);
-      border-color:#38bdf8;
-    }
-
-    .skill-card h3{
-      color:#38bdf8;
-      margin-bottom:10px;
-    }
-
-    .projects{
+    .hero-container{
+      width:100%;
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:25px;
+      gap:60px;
+      align-items:center;
     }
 
-    .project-card{
-      background:#1e293b;
-      padding:25px;
-      border-radius:12px;
-      border:1px solid #334155;
-      transition:0.3s;
-    }
-
-    .project-card:hover{
-      transform:scale(1.03);
-      border-color:#38bdf8;
-    }
-
-    .project-card h3{
-      color:#38bdf8;
+    .hero-text h3{
+      color:#00f0ff;
+      font-size:22px;
       margin-bottom:15px;
     }
 
-    .contact{
-      text-align:center;
+    .hero-text h1{
+      font-size:75px;
+      line-height:1.1;
+      margin-bottom:20px;
+      font-weight:800;
     }
 
-    .contact p{
-      margin:10px 0;
+    .hero-text h1 span{
+      background:linear-gradient(to right,#00f0ff,#8b5cf6);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .hero-text p{
+      color:#bfc9d9;
+      line-height:1.8;
+      font-size:18px;
+      max-width:600px;
+    }
+
+    .hero-btns{
+      margin-top:35px;
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:14px 32px;
+      border-radius:14px;
+      text-decoration:none;
+      color:white;
+      font-weight:600;
+      transition:0.4s;
+      border:1px solid rgba(255,255,255,0.15);
+      backdrop-filter:blur(10px);
+      background:rgba(255,255,255,0.08);
+      box-shadow:0 0 20px rgba(0,240,255,0.15);
+    }
+
+    .btn:hover{
+      transform:translateY(-5px) scale(1.03);
+      background:linear-gradient(to right,#00f0ff,#8b5cf6);
+      box-shadow:0 0 30px rgba(0,240,255,0.5);
+    }
+
+    /* GLASS CARD */
+
+    .glass-card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.1);
+      backdrop-filter:blur(18px);
+      border-radius:24px;
+      padding:40px;
+      transition:0.4s;
+      box-shadow:0 10px 40px rgba(0,0,0,0.3);
+    }
+
+    .glass-card:hover{
+      transform:translateY(-10px);
+      border-color:#00f0ff;
+      box-shadow:0 0 40px rgba(0,240,255,0.2);
+    }
+
+    .hero-card h2{
+      font-size:30px;
+      margin-bottom:20px;
+      color:#00f0ff;
+    }
+
+    .hero-card p{
       color:#cbd5e1;
+      line-height:1.8;
+    }
+
+    /* SECTION */
+
+    section{
+      padding:100px 10%;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:50px;
+      margin-bottom:60px;
+      font-weight:700;
+    }
+
+    .section-title span{
+      background:linear-gradient(to right,#00f0ff,#8b5cf6);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    /* SKILLS */
+
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:30px;
+    }
+
+    .skill-card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      backdrop-filter:blur(15px);
+      padding:35px;
+      border-radius:22px;
+      transition:0.4s;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .skill-card::before{
+      content:"";
+      position:absolute;
+      width:150px;
+      height:150px;
+      background:#00f0ff25;
+      border-radius:50%;
+      top:-60px;
+      right:-60px;
+    }
+
+    .skill-card:hover{
+      transform:translateY(-10px) scale(1.02);
+      border-color:#00f0ff;
+      box-shadow:0 0 40px rgba(0,240,255,0.2);
+    }
+
+    .skill-card h3{
+      margin-bottom:15px;
+      font-size:24px;
+      color:#00f0ff;
+    }
+
+    .skill-card p{
+      color:#d1d5db;
+      line-height:1.7;
+    }
+
+    /* PROJECTS */
+
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:30px;
+    }
+
+    .project-card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      padding:35px;
+      border-radius:24px;
+      backdrop-filter:blur(15px);
+      transition:0.4s;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .project-card::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to bottom right,#00f0ff15,#8b5cf615);
+      opacity:0;
+      transition:0.4s;
+    }
+
+    .project-card:hover::after{
+      opacity:1;
+    }
+
+    .project-card:hover{
+      transform:translateY(-10px);
+      border-color:#00f0ff;
+      box-shadow:0 0 35px rgba(0,240,255,0.2);
+    }
+
+    .project-card h3{
+      color:#00f0ff;
+      margin-bottom:18px;
+      font-size:24px;
+    }
+
+    .project-card p{
+      color:#d1d5db;
+      line-height:1.8;
+    }
+
+    /* CONTACT */
+
+    .contact-box{
+      text-align:center;
+      max-width:800px;
+      margin:auto;
+    }
+
+    .contact-box p{
+      color:#d1d5db;
+      margin:15px 0;
       font-size:18px;
     }
 
-    footer{
-      text-align:center;
-      padding:20px;
-      background:#020617;
-      color:#94a3b8;
+    .socials{
+      margin-top:30px;
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:20px;
     }
+
+    .socials a{
+      padding:14px 26px;
+      border-radius:14px;
+      text-decoration:none;
+      color:white;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.1);
+      transition:0.4s;
+    }
+
+    .socials a:hover{
+      background:linear-gradient(to right,#00f0ff,#8b5cf6);
+      transform:translateY(-5px);
+      box-shadow:0 0 25px rgba(0,240,255,0.4);
+    }
+
+    /* FOOTER */
+
+    footer{
+      padding:25px;
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,0.08);
+      color:#94a3b8;
+      background:rgba(255,255,255,0.03);
+      backdrop-filter:blur(10px);
+    }
+
+    /* RESPONSIVE */
 
     @media(max-width:768px){
-      header h1{
-        font-size:42px;
+
+      .hero-text h1{
+        font-size:52px;
       }
 
-      header h2{
-        font-size:22px;
+      .section-title{
+        font-size:38px;
       }
+
+      nav{
+        padding:18px 6%;
+      }
+
+      nav ul{
+        gap:15px;
+      }
+
+      .hero{
+        padding-top:150px;
+      }
+
     }
+
   </style>
 </head>
 
 <body>
 
-  <!-- HERO SECTION -->
+  <!-- NAVBAR -->
 
-  <header>
-    <h1>Ashish </h1>
-    <h2>DevOps Engineer</h2>
+  <nav>
 
-    <p>
-      Passionate DevOps Engineer focused on Cloud, Linux, Docker,
-      Kubernetes, CI/CD Pipelines, and Automation.
-      I build scalable and reliable infrastructure solutions.
-    </p>
+    <div class="logo">ASHISH</div>
 
-    <a href="#contact" class="btn">Hire Me</a>
-  </header>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
 
-  <!-- ABOUT -->
+  </nav>
 
-  <section>
-    <h2 class="section-title">About Me</h2>
+  <!-- HERO -->
 
-    <div class="about">
-      <p>
-        I am a DevOps Engineer with experience in Linux Administration,
-        AWS Cloud, Docker Containers, Kubernetes, Jenkins,
-        GitHub Actions, Terraform, and Monitoring tools.
-        I love automating workflows and building scalable systems.
-      </p>
+  <section class="hero">
+
+    <div class="hero-container">
+
+      <div class="hero-text">
+
+        <h3>🚀 DevOps Engineer & Cloud Enthusiast</h3>
+
+        <h1>
+          Building Modern
+          <span>Cloud Infrastructure</span>
+        </h1>
+
+        <p>
+          Passionate about Linux, AWS, Docker, Kubernetes,
+          CI/CD pipelines, automation, and scalable infrastructure.
+          Currently mastering DevOps by building real-world projects
+          and documenting the journey publicly.
+        </p>
+
+        <div class="hero-btns">
+
+          <a href="#projects" class="btn">View Projects</a>
+
+          <a href="#contact" class="btn">Hire Me</a>
+
+        </div>
+
+      </div>
+
+      <div class="glass-card hero-card">
+
+        <h2>💡 About Me</h2>
+
+        <p>
+          I’m Ashish — a DevOps engineer focused on automation,
+          cloud-native technologies, infrastructure as code,
+          and scalable deployment systems.
+          <br><br>
+          I love solving infrastructure problems,
+          optimizing workflows, and building modern deployment pipelines.
+        </p>
+
+      </div>
+
     </div>
+
   </section>
 
   <!-- SKILLS -->
 
-  <section>
-    <h2 class="section-title">Skills</h2>
+  <section id="skills">
 
-    <div class="skills">
+    <h2 class="section-title">
+      My <span>Skills</span>
+    </h2>
+
+    <div class="skills-grid">
 
       <div class="skill-card">
         <h3>Linux</h3>
-        <p>Ubuntu, CentOS, Shell Scripting</p>
+        <p>Ubuntu, Shell Scripting, Process Management, Networking</p>
       </div>
 
       <div class="skill-card">
-        <h3>Cloud</h3>
-        <p>AWS, EC2, S3, IAM, VPC</p>
+        <h3>AWS Cloud</h3>
+        <p>EC2, IAM, VPC, S3, Security Groups, Cloud Infrastructure</p>
       </div>
 
       <div class="skill-card">
-        <h3>Containers</h3>
-        <p>Docker, Kubernetes</p>
+        <h3>Docker</h3>
+        <p>Containerization, Dockerfiles, Docker Compose, Images</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Kubernetes</h3>
+        <p>Deployments, Services, Pods, Scaling, Cluster Management</p>
       </div>
 
       <div class="skill-card">
         <h3>CI/CD</h3>
-        <p>Jenkins, GitHub Actions</p>
+        <p>Jenkins, GitHub Actions, Automated Deployment Pipelines</p>
       </div>
 
       <div class="skill-card">
-        <h3>Infrastructure</h3>
-        <p>Terraform, Ansible</p>
-      </div>
-
-      <div class="skill-card">
-        <h3>Monitoring</h3>
-        <p>Prometheus, Grafana</p>
+        <h3>Terraform</h3>
+        <p>Infrastructure as Code, AWS Provisioning, Automation</p>
       </div>
 
     </div>
+
   </section>
 
   <!-- PROJECTS -->
 
-  <section>
-    <h2 class="section-title">Projects</h2>
+  <section id="projects">
 
-    <div class="projects">
+    <h2 class="section-title">
+      Featured <span>Projects</span>
+    </h2>
+
+    <div class="projects-grid">
 
       <div class="project-card">
-        <h3>CI/CD Pipeline</h3>
+
+        <h3>🚀 CI/CD Pipeline</h3>
+
         <p>
           Automated deployment pipeline using Jenkins,
-          Docker, and GitHub Webhooks.
+          Docker, GitHub Webhooks, and AWS infrastructure.
         </p>
+
       </div>
 
       <div class="project-card">
-        <h3>Kubernetes Deployment</h3>
+
+        <h3>☸ Kubernetes Deployment</h3>
+
         <p>
           Deployed scalable microservices architecture
-          on Kubernetes cluster.
+          using Kubernetes and container orchestration.
         </p>
+
       </div>
 
       <div class="project-card">
-        <h3>AWS Infrastructure</h3>
+
+        <h3>☁ AWS Infrastructure</h3>
+
         <p>
-          Created secure cloud infrastructure using Terraform
-          and AWS services.
+          Built secure and scalable cloud infrastructure
+          using Terraform and AWS services.
         </p>
+
       </div>
 
     </div>
+
   </section>
 
   <!-- CONTACT -->
 
   <section id="contact">
-    <h2 class="section-title">Contact</h2>
 
-    <div class="contact">
-      <p>Email: ashish@example.com</p>
-      <p>GitHub: github.com/ashish</p>
-      <p>LinkedIn: linkedin.com/in/ashish</p>
+    <h2 class="section-title">
+      Let's <span>Connect</span>
+    </h2>
+
+    <div class="glass-card contact-box">
+
+      <p>📧 ashish@example.com</p>
+
+      <p>🌍 DevOps • Cloud • Automation • Infrastructure</p>
+
+      <div class="socials">
+
+        <a href="#">GitHub</a>
+
+        <a href="#">LinkedIn</a>
+
+        <a href="#">Resume</a>
+
+      </div>
+
     </div>
+
   </section>
 
   <!-- FOOTER -->
 
   <footer>
-    <p>© 2026 Ashish Sharma | DevOps Engineer</p>
+
+    © 2026 Ashish Sharma • DevOps Engineer
+
   </footer>
 
 </body>
