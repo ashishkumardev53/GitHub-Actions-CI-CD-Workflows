@@ -15,7 +15,6 @@ on:
           - prod
           - staging
      
-
 jobs:
 
     code:
