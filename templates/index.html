@@ -1,88 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevOps Zero To Hero</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            color: #e0e0e0;
-        }
-        .container {
-            text-align: center;
-            padding: 2rem;
-            max-width: 640px;
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(90deg, #00d2ff, #7b2ff7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .badge {
-            display: inline-block;
-            margin: 1rem 0 2rem;
-            padding: 0.4rem 1.2rem;
-            border: 1px solid #7b2ff7;
-            border-radius: 999px;
-            font-size: 0.9rem;
-            color: #c4b5fd;
-            letter-spacing: 0.05em;
-        }
-        .cards {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .card {
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 1.5rem 1.8rem;
-            min-width: 150px;
-            flex: 1;
-        }
-        .card span {
-            display: block;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: #9ca3af;
-            margin-bottom: 0.4rem;
-        }
-        .card strong {
-            font-size: 1.25rem;
-            color: #f9fafb;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DevOps Zero To Hero</title>
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+
+    body{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+      font-family:system-ui;
+      color:#fff;
+    }
+
+    .container{
+      width:90%;
+      max-width:700px;
+      text-align:center;
+      padding:2rem;
+    }
+
+    h1{
+      font-size:3rem;
+      margin-bottom:10px;
+      background:linear-gradient(90deg,#00d2ff,#7b2ff7);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .badge{
+      display:inline-block;
+      padding:8px 18px;
+      border:1px solid #7b2ff7;
+      border-radius:999px;
+      color:#c4b5fd;
+      margin-bottom:2rem;
+      font-size:.9rem;
+    }
+
+    .pipeline{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+      gap:1rem;
+    }
+
+    .step{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.1);
+      padding:1.2rem;
+      border-radius:14px;
+      backdrop-filter:blur(8px);
+      transition:.3s;
+    }
+
+    .step:hover{
+      transform:translateY(-5px);
+      border-color:#7b2ff7;
+    }
+
+    .icon{
+      font-size:1.8rem;
+      margin-bottom:.6rem;
+    }
+
+    .step h3{
+      font-size:1rem;
+      margin-bottom:.3rem;
+    }
+
+    .step p{
+      font-size:.85rem;
+      color:#cbd5e1;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <h1>DevOps Zero To Hero</h1>
-        <div class="badge">Josh Batch 10</div>
-        <div class="cards">
-            <div class="card">
-                <span>Framework</span>
-                <strong>Flask 3.1</strong>
-            </div>
-            <div class="card">
-                <span>Runtime</span>
-                <strong>Python 3.14</strong>
-            </div>
-            <div class="card">
-                <span>Deploy</span>
-                <strong>AWS ECS</strong>
-            </div>
-        </div>
+
+  <div class="container">
+
+    <h1>DevOps Zero To Hero</h1>
+
+    <div class="badge">
+      CI/CD Pipeline with GitHub Actions
     </div>
+
+    <div class="pipeline">
+
+      <div class="step">
+        <div class="icon">⚡</div>
+        <h3>Build</h3>
+        <p>Docker image created automatically</p>
+      </div>
+
+      <div class="step">
+        <div class="icon">✅</div>
+        <h3>Test & Lint</h3>
+        <p>Code quality checks passed</p>
+      </div>
+
+      <div class="step">
+        <div class="icon">🚀</div>
+        <h3>Deploy</h3>
+        <p>Live deployment using GitHub Actions</p>
+      </div>
+
+    </div>
+
+  </div>
+
 </body>
 </html>
