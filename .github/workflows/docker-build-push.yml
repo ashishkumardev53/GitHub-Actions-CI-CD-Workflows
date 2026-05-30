@@ -1,8 +1,7 @@
 name: Docker Build & Push
 
 on:
-  push:
-    branches: [main]
+  workflow_call:
 
 jobs:
   build-and-push:
@@ -26,4 +25,4 @@ jobs:
           tags: |
             ${{ vars.DOCKERHUB_USER }}/github-actions-app:${{ github.ref_name }}
             ${{ vars.DOCKERHUB_USER }}/github-actions-app:latest
-            ${{ vars.DOCKERHUB_USER }}/github-actions-app:${{  github.SHA }}
+            ${{ vars.DOCKERHUB_USER }}/github-actions-app:${{ github.sha}}
