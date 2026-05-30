@@ -6,76 +6,114 @@
   <title>DevOps Zero To Hero</title>
 
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
     body{
       min-height:100vh;
       display:flex;
       align-items:center;
       justify-content:center;
-      background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+      background:#050816;
       font-family:system-ui;
-      color:#fff;
+      color:white;
+      overflow:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:absolute;
+      width:500px;
+      height:500px;
+      background:#00f7ff;
+      filter:blur(140px);
+      top:-120px;
+      left:-100px;
+      opacity:.25;
+    }
+
+    body::after{
+      content:"";
+      position:absolute;
+      width:500px;
+      height:500px;
+      background:#ff00aa;
+      filter:blur(140px);
+      bottom:-120px;
+      right:-100px;
+      opacity:.25;
     }
 
     .container{
+      position:relative;
+      z-index:1;
       width:90%;
-      max-width:700px;
+      max-width:750px;
       text-align:center;
-      padding:2rem;
+      padding:2.5rem;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.05);
+      backdrop-filter:blur(18px);
+      border-radius:24px;
+      box-shadow:0 0 40px rgba(0,0,0,.4);
     }
 
     h1{
-      font-size:3rem;
-      margin-bottom:10px;
-      background:linear-gradient(90deg,#00d2ff,#7b2ff7);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
+      font-size:3.2rem;
+      margin-bottom:12px;
+      color:#fff;
+      text-shadow:0 0 25px #00f7ff;
     }
 
     .badge{
       display:inline-block;
-      padding:8px 18px;
-      border:1px solid #7b2ff7;
+      padding:10px 22px;
       border-radius:999px;
-      color:#c4b5fd;
-      margin-bottom:2rem;
+      background:linear-gradient(90deg,#00f7ff,#ff00aa);
+      color:#050816;
+      font-weight:700;
+      margin-bottom:2.5rem;
       font-size:.9rem;
     }
 
     .pipeline{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
       gap:1rem;
     }
 
     .step{
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.1);
-      padding:1.2rem;
-      border-radius:14px;
-      backdrop-filter:blur(8px);
-      transition:.3s;
+      padding:1.5rem;
+      border-radius:18px;
+      background:#0f172a;
+      border:1px solid rgba(255,255,255,.08);
+      transition:.35s;
     }
 
     .step:hover{
-      transform:translateY(-5px);
-      border-color:#7b2ff7;
+      transform:translateY(-8px) scale(1.03);
+      box-shadow:0 0 25px rgba(0,247,255,.25);
+      border-color:#00f7ff;
     }
 
     .icon{
-      font-size:1.8rem;
-      margin-bottom:.6rem;
+      font-size:2rem;
+      margin-bottom:.8rem;
     }
 
     .step h3{
-      font-size:1rem;
-      margin-bottom:.3rem;
+      margin-bottom:.5rem;
+      font-size:1.1rem;
+      color:#00f7ff;
     }
 
     .step p{
-      font-size:.85rem;
+      font-size:.88rem;
       color:#cbd5e1;
+      line-height:1.5;
     }
   </style>
 </head>
@@ -87,27 +125,27 @@
     <h1>DevOps Zero To Hero</h1>
 
     <div class="badge">
-      CI/CD Pipeline with GitHub Actions
+      GitHub Actions CI/CD Pipeline
     </div>
 
     <div class="pipeline">
 
       <div class="step">
-        <div class="icon">⚡</div>
+        <div class="icon">⚙️</div>
         <h3>Build</h3>
-        <p>Docker image created automatically</p>
+        <p>Docker image built automatically</p>
       </div>
 
       <div class="step">
-        <div class="icon">✅</div>
+        <div class="icon">🧪</div>
         <h3>Test & Lint</h3>
-        <p>Code quality checks passed</p>
+        <p>Quality checks completed successfully</p>
       </div>
 
       <div class="step">
         <div class="icon">🚀</div>
         <h3>Deploy</h3>
-        <p>Live deployment using GitHub Actions</p>
+        <p>Application deployed using GitHub Actions</p>
       </div>
 
     </div>
